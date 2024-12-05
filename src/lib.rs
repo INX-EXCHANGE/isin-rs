@@ -11,14 +11,14 @@
 //! An ISIN is comprised of 12 ASCII characters with the following parts, in order:
 //!
 //! 1. A two-letter _Prefix_ in uppercase, designating the issuer's country
-//! of registration or legal domicile, or for OTC derivatives the special code `EZ`. Additional
-//! codes may be allocated by subsequent revisions to The Standard. Country codes follow the
-//! [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) standard.
+//!    of registration or legal domicile, or for OTC derivatives the special code `EZ`. Additional
+//!    codes may be allocated by subsequent revisions to The Standard. Country codes follow the
+//!    [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) standard.
 //! 2. A nine-character uppercase alphanumeric _Basic Code_ assigned by the corresponding
-//! National Numbering Agency, zero-padded on the left if the underlying code is shorter than nine
-//! characters.
+//!    National Numbering Agency, zero-padded on the left if the underlying code is shorter than nine
+//!    characters.
 //! 3. A single decimal digit representing the _Check Digit_ computed using what the standard calls
-//! the "modulus 10 'double-add-double' check digit".
+//!    the "modulus 10 'double-add-double' check digit".
 //!
 //! Use the `parse()` or `parse_loose()` methods on the ISIN type to convert a string to a validated
 //! ISIN.
