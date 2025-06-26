@@ -31,6 +31,12 @@
 //! * [ISIN](https://crates.io/crates/isin): International Securities Identification Number (ISO 6166:2021)
 //! * [LEI](https://crates.io/crates/lei): Legal Entity Identifier (ISO 17442:2020)
 //!
+//! ## Optional features
+//!
+//! * `serde` - Enables serialization and deserialization via [serde](https://crates.io/crates/serde).
+//! * `schemars` - Enables JSON Schema generation via [schemars](https://crates.io/crates/schemars).
+//!   Generates schemas that match the serde deserialization behavior.
+//!
 
 use std::fmt;
 use std::str::from_utf8_unchecked;
@@ -42,6 +48,9 @@ use checksum::checksum_table;
 
 pub mod error;
 pub use error::Error;
+
+#[cfg(feature = "schemars")]
+pub mod schemars;
 
 /// Compute the _Check Digit_ for an array of u8. No attempt is made to ensure the input string
 /// is in the ISIN payload format or length. If an illegal character (not an ASCII digit and not
